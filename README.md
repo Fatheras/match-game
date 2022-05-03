@@ -1,67 +1,24 @@
-# Zoopla Match! Task (Backend)
+# Card Game
 
-This test is intended to help us gauge your competency with a language as well as how you design/structure your code. We'd like to see your test in one of the following languages:
+Simulation of a card game called "Match!" between two computer players.
 
-- Java
-- JavaScript/TypeScript
-- C#
-- Python
-- Perl
-- Go
+## How to start
 
-Please attempt the following at your own convenience but do not spend more than 1½ hours on it.  Once the 1½ hours is over and you've completed the test and sent your result back, please follow it up with some notes on how you thought the test went and anything you'd do differently, given more time. 
+1. Clone the project `git clone https://github.com/zoopla/Stanislav-Levchenko.git`
+2. Run `npm i`
+3. Run `npm start` for a dev server
+4. Navigate to `http://localhost:4200/`
 
-## The task
+## Running unit tests
 
-Write a program to simulate a card game called "Match!" between two computer players. 
+Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### "Match!" Game Rules
-#### Game Setup
-Choose a number of packs of [playing cards](https://en.wikipedia.org/wiki/Standard_52-card_deck), and combine them into a single *deck*. Shuffle the deck.
+## How to improve
 
-#### Playing the game
-Cards are played sequentially from the top of the deck into the *pile*. 
-
-If two cards played sequentially *match* (see "Match condition" below), the first player to declare "Match!" takes all the cards in the pile. *For the purposes of this simulation, the program should choose a random player as having declared "Match!" first.*
-
-Play then continues with the next card in the deck, starting a new pile. The game ends when no more cards can be drawn from the deck and no player can declare "Match!". (Any remaining cards in the pile may be discarded.)
-
-The player that has taken the most cards is the winner. The game may end in a draw.
-
-#### Match condition
-
-The match condition determines when two cards *match* for the duration of the game. There are three options:
-                             
- - The **suits** of two cards must match
-     - Example: "3 of hearts" and "5 of hearts" match because they are both **hearts**.
- - The **values** of two cards must match
-     - Example: "7 of hearts" and "7 of clubs" match because they both have the value **7**.
- - **Both suit and value** must match 
-     - Example: "Jack of spades" **only matches** another "Jack of spades"
-
-
-### The program
-As input, the program should ask:
-
-1. how many packs of cards to use for the deck
-1. which *match condition* to use
-
-It should then simulate the game.
-
-The program should output the results by either declaring the winner, or a draw.
-
----
-
-## Glossary
-
-**Pack** - A complete set of 52 playing cards.
-
-**Deck** - The set of cards in play. This could be multiple packs, or a subset of cards from a single pack depending on the game being played.
-
-**Value** - The number or title value associated with a card. EG "_one_", "_queen_" or "_ace_".
-
-**Suit** - A pack is divided into 4 suits. The possible suits are
- - "clubs" ♣️,
- - "diamonds" ♦️,
- - "hearts" ♥️, and
- - "spades" ♠️
+- provide the ability to play the game in real time, for example by using setTimeOut and asking the players to press a specific key to declare "Match!"
+- move the logic to the server side
+- provide additional features such as authorization, user profile, leaderboard, monetization, user chat between game sessions and so on
+- improve UI
+- refactor the code (improve shuffle algorithm, remove the prompt loop, use Angular code architecture, move some logic to a shared service)
+- add more validation
+- improve test coverage(add integration and e2e tests)
